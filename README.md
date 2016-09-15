@@ -50,6 +50,36 @@ There are two other Maven lifecycles of note beyond the default list above. They
 - **clean**: cleans up artifacts created by prior builds
 - **site**: generates site documentation for this project
 
+### Repository
+
+There are 3 kinds of repository:
+
+- Local, specified in ~/.m2/setting.xml by adding `<localRepository>path/to/lical/repo</localRepository>`, or add the following tag to the pom.xml:
+```
+<repositories>
+    <repository>
+        <id>lib</id>
+        <url>file:${basedir}/lib</url>
+    </repository>
+</repositories>
+```
+
+- Central, a repository provided by the Maven community
+- Remote, is developer's own custom repository containing the required libraries or other project jars:
+```xml
+<repositories>
+  <repository>
+     <id>companyname.lib1</id>
+     <url>http://download.companyname.org/maven2/lib1</url>
+  </repository>
+  <repository>
+     <id>companyname.lib2</id>
+     <url>http://download.companyname.org/maven2/lib2</url>
+  </repository>
+</repositories>
+```
+
+
 ## References
 
 1. [Maben in 5 Minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
