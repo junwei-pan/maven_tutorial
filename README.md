@@ -14,6 +14,16 @@ mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darchety
 mvn package
 ```
 
+Or we can use the following command to first remove the target folder
+```shell
+mvn clean package
+```
+
+To skip test, use `-Dmaven.test.skip=true`
+```shell
+mvn clean package -Dmaven.test.skip=true
+```
+
 ### Run the Code
 
 ```shell
